@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>That's My Seat Game - Slideshelf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-content">
+        <button class="back-btn" onclick="history.back()" aria-label="Go back">
+          <span class="material-icons">arrow_back</span>
+        </button>
+        <div
+          class="logo"
+          onclick="window.location.href='index.html'"
+          role="button"
+          tabindex="0"
+          aria-label="Slideshelf Home"
+        >
+          Slideshelf
+        </div>
+        <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Templates</a></li>
+            <li class="profile-dropdown">
+              <div
+                class="profile-trigger"
+                id="profileTrigger"
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="User menu"
+              >
+                <div class="profile-avatar" aria-hidden="true">A</div>
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </div>
+              <div
+                class="dropdown-menu"
+                id="dropdownMenu"
+                role="menu"
+                aria-label="User menu options"
+              >
+                <div class="dropdown-header">
+                  <div class="dropdown-user-info">
+                    <div class="dropdown-avatar" aria-hidden="true">A</div>
+                    <div class="dropdown-user-details">
+                      <h4>Andrea Smith</h4>
+                      <p>andrea@email.com</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="profile.html" class="dropdown-item" role="menuitem">
+                  <span class="material-icons" aria-hidden="true">person</span>
+                  <span>View Profile</span>
+                </a>
+                <a href="favorites.html" class="dropdown-item" role="menuitem">
+                  <span class="material-icons" aria-hidden="true"
+                    >favorite</span
+                  >
+                  <span>Favorites</span>
+                </a>
+                <div class="dropdown-divider" role="separator"></div>
+                <button
+                  class="dropdown-item logout"
+                  id="logoutBtn"
+                  role="menuitem"
+                >
+                  <span class="material-icons" aria-hidden="true">logout</span>
+                  <span>Logout</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main role="main">
+      <div class="template-detail">
+        <!-- LEFT COLUMN - Main Content -->
+        <div class="left-column">
+          <!-- Hero Section -->
+          <section class="hero-section">
+            <div class="hero-header">
+              <h1 class="hero-title">That's My Seat Game</h1>
+              <div class="hero-stats">
+                <div class="rating">
+                  <span class="star" aria-hidden="true">★</span>
+                  <span
+                    ><strong>4.9</strong>
+                    <span class="sr-only">out of 5,</span> (21 reviews)</span
+                  >
+                </div>
+                <div class="downloads">
+                  <span
+                    class="material-icons"
+                    style="font-size: 18px"
+                    aria-hidden="true"
+                    >download</span
+                  >
+                  <span>30 downloads</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Preview Carousel -->
+            <div
+              class="preview-carousel"
+              role="region"
+              aria-label="Template slides carousel"
+            >
+              <!-- Slide Images -->
+              <img
+                src="assets/templates/games/seat/1.png"
+                alt="Template slide 1"
+                class="slide-image active"
+                id="slide-1"
+              />
+              <img
+                src="assets/templates/games/seat/2.png"
+                alt="Template slide 2"
+                class="slide-image"
+                id="slide-2"
+              />
+              <img
+                src="assets/templates/games/seat/3.png"
+                alt="Template slide 3"
+                class="slide-image"
+                id="slide-3"
+              />
+              <img
+                src="assets/templates/games/seat/4.png"
+                alt="Template slide 4"
+                class="slide-image"
+                id="slide-4"
+              />
+              <img
+                src="assets/templates/games/seat/5.png"
+                alt="Template slide 5"
+                class="slide-image"
+                id="slide-5"
+              />
+              <img
+                src="assets/templates/games/seat/6.png"
+                alt="Template slide 6"
+                class="slide-image"
+                id="slide-6"
+              />
+
+              <!-- Navigation Arrows -->
+              <button
+                class="carousel-arrow prev-arrow"
+                id="prevSlide"
+                aria-label="Previous slide"
+              >
+                <span class="material-icons">chevron_left</span>
+              </button>
+              <button
+                class="carousel-arrow next-arrow"
+                id="nextSlide"
+                aria-label="Next slide"
+              >
+                <span class="material-icons">chevron_right</span>
+              </button>
+
+              <div
+                class="carousel-controls"
+                role="tablist"
+                aria-label="Slide navigation"
+              >
+                <button
+                  class="carousel-dot active"
+                  role="tab"
+                  aria-label="Slide 1"
+                  aria-selected="true"
+                  data-slide="0"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  role="tab"
+                  aria-label="Slide 2"
+                  aria-selected="false"
+                  data-slide="1"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  role="tab"
+                  aria-label="Slide 3"
+                  aria-selected="false"
+                  data-slide="2"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  role="tab"
+                  aria-label="Slide 4"
+                  aria-selected="false"
+                  data-slide="3"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  role="tab"
+                  aria-label="Slide 5"
+                  aria-selected="false"
+                  data-slide="4"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  role="tab"
+                  aria-label="Slide 6"
+                  aria-selected="false"
+                  data-slide="5"
+                ></button>
+              </div>
+            </div>
+            <p class="slide-count" aria-live="polite">Slide 1 of 6</p>
+          </section>
+
+          <!-- Template Information -->
+          <section class="template-info-section">
+            <div class="author-card">
+              <div class="author-avatar" aria-hidden="true">H</div>
+              <div class="author-details">
+                <h3>Hannah Marquez</h3>
+                <p>College Instructor</p>
+              </div>
+            </div>
+
+            <div class="template-description">
+              <p>
+                An engaging and interactive quiz game template perfect for
+                classroom activities, training sessions, or fun educational
+                presentations. Features colorful designs, customizable
+                questions, and built-in animations to keep your audience
+                engaged. This template includes multiple slide variations and is
+                fully editable to match your content needs.
+              </p>
+            </div>
+          </section>
+
+          <!-- Tags Section -->
+          <section class="tags-section">
+            <h2>Categories & Tags</h2>
+            <div class="tags-grid">
+              <span class="tag-item">Game</span>
+              <span class="tag-item">Collaboration</span>
+              <span class="tag-item">Interactive</span>
+              <span class="tag-item">School</span>
+              <span class="tag-item">Fun</span>
+              <span class="tag-item">Education</span>
+              <span class="tag-item">Animated</span>
+              <span class="tag-item">Inspired</span>
+            </div>
+          </section>
+
+          <!-- Related Templates -->
+          <section class="related-section">
+            <h2>Related Templates</h2>
+            <div class="related-grid">
+              <a href="#" class="related-card">
+                <div class="related-card-image">🎮</div>
+                <div class="related-card-content">
+                  <div class="related-card-title">Quiz Battle Game</div>
+                  <div class="related-card-meta">
+                    <span class="star">★</span> 4.8 • 45 downloads
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="related-card">
+                <div class="related-card-image">🏆</div>
+                <div class="related-card-content">
+                  <div class="related-card-title">Trivia Challenge</div>
+                  <div class="related-card-meta">
+                    <span class="star">★</span> 4.7 • 38 downloads
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="related-card">
+                <div class="related-card-image">🎯</div>
+                <div class="related-card-content">
+                  <div class="related-card-title">Team Competition</div>
+                  <div class="related-card-meta">
+                    <span class="star">★</span> 4.9 • 52 downloads
+                  </div>
+                </div>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN - Sidebar -->
+        <div class="right-column">
+          <!-- Action Buttons -->
+          <div class="sidebar-actions">
+            <div class="action-buttons">
+              <button
+                class="action-btn"
+                id="favoriteBtn"
+                aria-label="Add to favorites"
+                aria-pressed="false"
+              >
+                <span class="material-icons">favorite_border</span>
+                <span>Favorite</span>
+              </button>
+              <button
+                class="action-btn"
+                id="shareBtn"
+                aria-label="Share template"
+              >
+                <span class="material-icons">share</span>
+                <span>Share</span>
+              </button>
+              <button
+                class="action-btn"
+                id="rateBtn"
+                aria-label="Rate template"
+              >
+                <span class="material-icons">star_border</span>
+                <span>Rate</span>
+              </button>
+            </div>
+
+            <!-- Feedback Section -->
+            <div class="feedback-section">
+              <h3>Leave Feedback</h3>
+              <textarea
+                class="feedback-input"
+                placeholder="Share your thoughts about this template..."
+                aria-label="Feedback text"
+              ></textarea>
+              <button class="submit-feedback-btn">Submit Feedback</button>
+            </div>
+          </div>
+
+          <!-- Download Section -->
+          <div class="sidebar-download">
+            <h2>Download this template</h2>
+            <button class="download-btn" id="downloadBtn">
+              <span class="material-icons">download</span>
+              Choose Format
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- DOWNLOAD FORMAT MODAL -->
+    <div
+      class="modal-overlay"
+      id="downloadModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="download-modal">
+        <div class="modal-header">
+          <h2 id="modal-title">Download Format</h2>
+          <button
+            class="close-modal"
+            id="closeDownloadModal"
+            aria-label="Close modal"
+          >
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+        <div class="format-buttons">
+          <button class="format-download-btn canva" data-format="canva">
+            <span class="material-icons">brush</span>
+            <span>Canva</span>
+          </button>
+          <button
+            class="format-download-btn powerpoint"
+            data-format="powerpoint"
+          >
+            <span class="material-icons">slideshow</span>
+            <span>PowerPoint</span>
+          </button>
+          <button class="format-download-btn slides" data-format="slides">
+            <span class="material-icons">present_to_all</span>
+            <span>Google Slides</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div
+      class="modal-overlay"
+      id="successModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="success-title"
+    >
+      <div class="success-modal">
+        <div class="success-icon" aria-hidden="true">
+          <span class="material-icons">check_circle</span>
+        </div>
+        <h2 id="success-title">Success!</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 8px">
+          Your template has been downloaded
+        </p>
+
+        <div class="file-details">
+          <p><span>File Size:</span> <strong>8.2 MB</strong></p>
+          <p>
+            <span>Format:</span> <strong id="downloadedFormat">.PPTX</strong>
+          </p>
+          <p><span>Location:</span> <strong>Downloads</strong></p>
+        </div>
+
+        <div class="success-actions">
+          <button
+            class="btn-success-primary"
+            onclick="window.location.href='index.html'"
+          >
+            Browse More
+          </button>
+          <button class="btn-success-secondary" id="closeSuccessModal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION (Mobile Only) -->
+    <nav class="bottom-nav" role="navigation" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="index.html" aria-label="Home">🏠</a></li>
+        <li><a href="search.html" aria-label="Search">🔍</a></li>
+        <li><a href="#" class="upload-btn" aria-label="Upload">+</a></li>
+        <li><a href="#" aria-label="Templates">📄</a></li>
+        <li><a href="#" aria-label="Profile">👤</a></li>
+      </ul>
+    </nav>
+
+    <script src="js/detail.js"></script>
+  </body>
+</html>

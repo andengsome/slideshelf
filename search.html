@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Templates - Slideshelf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/search.css" />
+  </head>
+
+  <body>
+    <!-- HEADER with Navigation -->
+    <header>
+      <div class="header-content">
+        <div
+          class="logo"
+          onclick="window.location.href='index.html'"
+          role="button"
+          tabindex="0"
+          aria-label="Slideshelf Home"
+        >
+          Slideshelf
+        </div>
+        <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html" class="active" aria-current="page">Home</a>
+            </li>
+            <li class="templates-nav-item">
+              <a
+                class="templates-nav-link"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Templates
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </a>
+
+              <!-- Templates Dropdown -->
+              <div class="templates-dropdown" role="menu">
+                <!-- By Style -->
+                <div class="dropdown-section">
+                  <div class="dropdown-section-title">
+                    <span class="material-icons">palette</span>
+                    <span>By Style</span>
+                  </div>
+                  <div class="dropdown-grid">
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Minimalist</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Simple</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Aesthetic</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Cute</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Professional</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Vintage</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Modern</span>
+                    </button>
+                    <a href="#" class="more-link">
+                      <span>View all styles</span>
+                      <span class="material-icons">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="dropdown-divider-line"></div>
+
+                <!-- By Color -->
+                <div class="dropdown-section">
+                  <div class="dropdown-section-title">
+                    <span class="material-icons">color_lens</span>
+                    <span>By Color</span>
+                  </div>
+                  <div class="dropdown-grid colors">
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #000; border-color: #000"
+                      ></span>
+                      <span>Black</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #fff"
+                      ></span>
+                      <span>White</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #ff61ca; border-color: #ff61ca"
+                      ></span>
+                      <span>Pink</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #bf63f1; border-color: #bf63f1"
+                      ></span>
+                      <span>Purple</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #22c55e; border-color: #22c55e"
+                      ></span>
+                      <span>Green</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #3b8ff6; border-color: #3b8ff6"
+                      ></span>
+                      <span>Blue</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #fff30d; border-color: #fff30d"
+                      ></span>
+                      <span>Yellow</span>
+                    </button>
+                    <a href="search.html?category=color" class="more-link">
+                      <span>View all colors</span>
+                      <span class="material-icons">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Login Button (shown when NOT logged in) -->
+            <li id="loginButtonContainer" class="hidden">
+              <button
+                class="login-btn"
+                onclick="window.location.href='login.html'"
+              >
+                Login
+              </button>
+            </li>
+
+            <!-- Profile Dropdown (shown when logged in) -->
+            <li class="profile-dropdown hidden" id="profileDropdownContainer">
+              <div
+                class="profile-trigger"
+                id="profileTrigger"
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="User menu"
+              >
+                <div
+                  class="profile-avatar"
+                  aria-hidden="true"
+                  id="profileAvatarInitial"
+                >
+                  AM
+                </div>
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </div>
+              <div
+                class="dropdown-menu"
+                id="dropdownMenu"
+                role="menu"
+                aria-label="User menu options"
+              >
+                <div class="dropdown-header">
+                  <div class="dropdown-user-info">
+                    <div
+                      class="dropdown-avatar"
+                      aria-hidden="true"
+                      id="dropdownAvatarInitial"
+                    >
+                      A
+                    </div>
+                    <div class="dropdown-user-details">
+                      <h4 id="userName">User Name</h4>
+                      <p id="userEmail">user@email.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-body">
+                  <a href="profile.html" class="dropdown-item" role="menuitem">
+                    View Profile
+                  </a>
+                  <a
+                    href="favorites.html"
+                    class="dropdown-item"
+                    role="menuitem"
+                  >
+                    My Favorites
+                  </a>
+                </div>
+                <div class="dropdown-divider" role="separator"></div>
+                <button
+                  class="dropdown-item logout"
+                  id="logoutBtn"
+                  role="menuitem"
+                >
+                  Logout
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- Search Header -->
+      <div class="search-header">
+        <div class="search-bar-container">
+          <div class="search-bar">
+            <span class="material-icons search-icon">search</span>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search templates..."
+              value=""
+              aria-label="Search templates"
+            />
+          </div>
+          <button
+            class="filter-toggle-btn"
+            id="filterToggle"
+            aria-label="Toggle filters"
+          >
+            <span class="material-icons">tune</span>
+            <span>Filters</span>
+          </button>
+        </div>
+
+        <!-- Results Info -->
+        <div class="results-info">
+          <p class="results-count" id="resultsCount">
+            Showing <strong>all templates</strong>
+          </p>
+          <div class="sort-container">
+            <label for="sortSelect">Sort by:</label>
+            <select id="sortSelect" class="sort-select">
+              <option value="popular">Popular</option>
+              <option value="newest">Newest</option>
+              <option value="downloads">Most Downloaded</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Panel -->
+      <div class="filter-panel" id="filterPanel">
+        <div class="filter-section">
+          <h3>Style</h3>
+          <div class="filter-chips">
+            <button class="filter-chip" data-filter="style">Modern</button>
+            <button class="filter-chip" data-filter="style">Vintage</button>
+            <button class="filter-chip active" data-filter="style">Fun</button>
+            <button class="filter-chip" data-filter="style">
+              Professional
+            </button>
+            <button class="filter-chip" data-filter="style">Minimalist</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Color</h3>
+          <div class="filter-chips">
+            <button class="filter-chip" data-filter="color">Blue</button>
+            <button class="filter-chip active" data-filter="color">
+              Colorful
+            </button>
+            <button class="filter-chip" data-filter="color">Warm</button>
+            <button class="filter-chip" data-filter="color">Monochrome</button>
+            <button class="filter-chip" data-filter="color">Pastel</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Category</h3>
+          <div class="filter-chips">
+            <button class="filter-chip" data-filter="category">Business</button>
+            <button class="filter-chip active" data-filter="category">
+              Education
+            </button>
+            <button class="filter-chip" data-filter="category">Creative</button>
+            <button class="filter-chip" data-filter="category">
+              Marketing
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn-clear" id="clearFilters">Clear All</button>
+          <button class="btn-apply" id="applyFilters">Apply Filters</button>
+        </div>
+      </div>
+
+      <!-- Template Grid -->
+      <div class="template-grid">
+        <!-- Template Card 1 -->
+        <div class="template-card">
+          <div class="template-image">
+            <img
+              src="assets/templates/preview/hamster.png"
+              alt="Cute Hamster Personal Organizer Template Preview"
+              loading="lazy"
+            />
+            <button
+              class="favorite-btn"
+              aria-label="Add Cute Hamster Personal Organizer to favorites"
+            >
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="template-info">
+            <div class="template-meta">
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.9 (21)</span>
+              </div>
+              <span class="author">by PlannerKim</span>
+            </div>
+            <h3 class="template-title">Cute Hamster Personal Organizer</h3>
+            <div class="template-tags">
+              <span class="tag">Interactive</span>
+              <span class="tag">Game</span>
+              <span class="tag">Planner</span>
+              <span class="tag">Animal</span>
+            </div>
+            <div class="template-actions">
+              <button class="btn-primary">Download</button>
+              <button class="btn-secondary">Preview</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template Card 2 -->
+        <div class="template-card">
+          <div class="template-image">
+            <img
+              src="assets/templates/preview/portfolio.png"
+              alt="Game Developer Portfolio Template Preview"
+              loading="lazy"
+            />
+            <button
+              class="favorite-btn"
+              aria-label="Add Game Developer Portfolio to favorites"
+            >
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="template-info">
+            <div class="template-meta">
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.7 (18)</span>
+              </div>
+              <span class="author">by ElmoPlayz</span>
+            </div>
+            <h3 class="template-title">Game Developer Portfolio</h3>
+            <div class="template-tags">
+              <span class="tag">Game</span>
+              <span class="tag">Creative</span>
+              <span class="tag">Business</span>
+              <span class="tag">Portfolio</span>
+            </div>
+            <div class="template-actions">
+              <button class="btn-primary">Download</button>
+              <button class="btn-secondary">Preview</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template Card 3 -->
+        <div class="template-card">
+          <div class="template-image">
+            <img
+              src="assets/templates/preview/mtwi.png"
+              alt="Minute to Win It Games Template Preview"
+              loading="lazy"
+            />
+            <button
+              class="favorite-btn"
+              aria-label="Add Game Developer Portfolio to favorites"
+            >
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="template-info">
+            <div class="template-meta">
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.6 (14)</span>
+              </div>
+              <span class="author">by FunSlides</span>
+            </div>
+            <h3 class="template-title">Minute to Win It Games</h3>
+            <div class="template-tags">
+              <span class="tag">Game</span>
+              <span class="tag">Yellow</span>
+              <span class="tag">Fun</span>
+              <span class="tag">Creative</span>
+            </div>
+            <div class="template-actions">
+              <button class="btn-primary">Download</button>
+              <button class="btn-secondary">Preview</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template Card 4 -->
+        <div class="template-card">
+          <div class="template-image">
+            <img
+              src="assets/templates/preview/crowns.png"
+              alt="Vintage Game of Crowns Minitheme Template Preview"
+              loading="lazy"
+            />
+            <button class="favorite-btn" aria-label="Add to favorites">
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="template-info">
+            <div class="template-meta">
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.8 (16)</span>
+              </div>
+              <span class="author">by PlayLearn</span>
+            </div>
+            <h3 class="template-title">Vintage Game of Crowns Minitheme</h3>
+            <div class="template-tags">
+              <span class="tag">Game</span>
+              <span class="tag">Medieval</span>
+              <span class="tag">Vintage</span>
+              <span class="tag">Brown</span>
+            </div>
+            <div class="template-actions">
+              <button class="btn-primary">Download</button>
+              <button class="btn-secondary">Preview</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template Card 5 -->
+        <div class="template-card">
+          <div class="template-image">
+            <img
+              src="assets/templates/preview/jeo.png"
+              alt="Jeopardy Style Quiz Template Preview"
+              loading="lazy"
+            />
+            <button class="favorite-btn" aria-label="Add to favorites">
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="template-info">
+            <div class="template-meta">
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.6 (19)</span>
+              </div>
+              <span class="author">by DaisyXu</span>
+            </div>
+            <h3 class="template-title">Jeopardy Style Quiz</h3>
+            <div class="template-tags">
+              <span class="tag">Quiz</span>
+              <span class="tag">Game</span>
+              <span class="tag">Retro</span>
+              <span class="tag">Purple</span>
+            </div>
+            <div class="template-actions">
+              <button class="btn-primary">Download</button>
+              <button class="btn-secondary">Preview</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template Card 6 -->
+        <div class="template-card">
+          <div class="template-image">
+            <img
+              src="assets/templates/preview/seat.png"
+              alt="That's My Seat Game Template Preview"
+              loading="lazy"
+            />
+            <button class="favorite-btn" aria-label="Add to favorites">
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="template-info">
+            <div class="template-meta">
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.9 (21)</span>
+              </div>
+              <span class="author">by MaamHannah</span>
+            </div>
+            <h3 class="template-title">That's My Seat Game</h3>
+            <div class="template-tags">
+              <span class="tag">Fun</span>
+              <span class="tag">Game</span>
+              <span class="tag">Collaboration</span>
+              <span class="tag">Adventure</span>
+            </div>
+            <div class="template-actions">
+              <button class="btn-primary">Download</button>
+              <button class="btn-secondary">Preview</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-container">
+        <button
+          class="pagination-btn prev"
+          id="prevPage"
+          aria-label="Previous page"
+        >
+          <span class="material-icons">chevron_left</span>
+        </button>
+
+        <div class="pagination-numbers" id="paginationNumbers">
+          <button class="pagination-number active" data-page="1">1</button>
+          <button class="pagination-number" data-page="2">2</button>
+          <button class="pagination-number" data-page="3">3</button>
+          <span class="pagination-ellipsis">...</span>
+          <button class="pagination-number" data-page="8">8</button>
+        </div>
+
+        <button
+          class="pagination-btn next"
+          id="nextPage"
+          aria-label="Next page"
+        >
+          <span class="material-icons">chevron_right</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- BOTTOM NAVIGATION (Mobile Only) -->
+    <nav class="bottom-nav">
+      <ul>
+        <li>
+          <a href="index.html" aria-label="Home">
+            <span class="material-icons">home</span>
+          </a>
+        </li>
+        <li>
+          <a href="search.html" class="active" aria-label="Search">
+            <span class="material-icons">search</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="upload-btn" aria-label="Upload">
+            <span class="material-icons">add</span>
+          </a>
+        </li>
+        <li>
+          <a href="search.html" aria-label="Templates">
+            <span class="material-icons">description</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" aria-label="Profile">
+            <span class="material-icons">person</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="js/search.js"></script>
+  </body>
+</html>

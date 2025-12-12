@@ -1,0 +1,534 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - Slideshelf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+
+  <body>
+    <!-- SUCCESS MESSAGE -->
+    <div class="success-message" id="successMessage">
+      <span class="material-icons">check_circle</span>
+      <span>Changes saved successfully!</span>
+    </div>
+
+    <!-- HEADER with Navigation -->
+    <header>
+      <div class="header-content">
+        <div
+          class="logo"
+          onclick="window.location.href='index.html'"
+          role="button"
+          tabindex="0"
+          aria-label="Slideshelf Home"
+        >
+          Slideshelf
+        </div>
+        <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html" class="active" aria-current="page">Home</a>
+            </li>
+            <li class="templates-nav-item">
+              <a
+                class="templates-nav-link"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Templates
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </a>
+
+              <!-- Templates Dropdown -->
+              <div class="templates-dropdown" role="menu">
+                <!-- By Style -->
+                <div class="dropdown-section">
+                  <div class="dropdown-section-title">
+                    <span class="material-icons">palette</span>
+                    <span>By Style</span>
+                  </div>
+                  <div class="dropdown-grid">
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Minimalist</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Simple</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Aesthetic</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Cute</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Professional</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Vintage</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Modern</span>
+                    </button>
+                    <a href="#" class="more-link">
+                      <span>View all styles</span>
+                      <span class="material-icons">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="dropdown-divider-line"></div>
+
+                <!-- By Color -->
+                <div class="dropdown-section">
+                  <div class="dropdown-section-title">
+                    <span class="material-icons">color_lens</span>
+                    <span>By Color</span>
+                  </div>
+                  <div class="dropdown-grid colors">
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #000; border-color: #000"
+                      ></span>
+                      <span>Black</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #fff"
+                      ></span>
+                      <span>White</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #ff61ca; border-color: #ff61ca"
+                      ></span>
+                      <span>Pink</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #bf63f1; border-color: #bf63f1"
+                      ></span>
+                      <span>Purple</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #22c55e; border-color: #22c55e"
+                      ></span>
+                      <span>Green</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #3b8ff6; border-color: #3b8ff6"
+                      ></span>
+                      <span>Blue</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #fff30d; border-color: #fff30d"
+                      ></span>
+                      <span>Yellow</span>
+                    </button>
+                    <a href="search.html?category=color" class="more-link">
+                      <span>View all colors</span>
+                      <span class="material-icons">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Login Button (shown when NOT logged in) -->
+            <li id="loginButtonContainer" class="hidden">
+              <button
+                class="login-btn"
+                onclick="window.location.href='login.html'"
+              >
+                Login
+              </button>
+            </li>
+
+            <!-- Profile Dropdown (shown when logged in) -->
+            <li class="profile-dropdown hidden" id="profileDropdownContainer">
+              <div
+                class="profile-trigger"
+                id="profileTrigger"
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="User menu"
+              >
+                <div
+                  class="profile-avatar"
+                  aria-hidden="true"
+                  id="profileAvatarInitial"
+                >
+                  AM
+                </div>
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </div>
+              <div
+                class="dropdown-menu"
+                id="dropdownMenu"
+                role="menu"
+                aria-label="User menu options"
+              >
+                <div class="dropdown-header">
+                  <div class="dropdown-user-info">
+                    <div
+                      class="dropdown-avatar"
+                      aria-hidden="true"
+                      id="dropdownAvatarInitial"
+                    >
+                      A
+                    </div>
+                    <div class="dropdown-user-details">
+                      <h4 id="userName">User Name</h4>
+                      <p id="userEmail">user@email.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-body">
+                  <a href="profile.html" class="dropdown-item" role="menuitem">
+                    View Profile
+                  </a>
+                  <a
+                    href="favorites.html"
+                    class="dropdown-item"
+                    role="menuitem"
+                  >
+                    My Favorites
+                  </a>
+                </div>
+                <div class="dropdown-divider" role="separator"></div>
+                <button
+                  class="dropdown-item logout"
+                  id="logoutBtn"
+                  role="menuitem"
+                >
+                  Logout
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main role="main">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="profile-avatar-container">
+          <div
+            class="profile-avatar-large"
+            id="profileAvatarMain"
+            aria-hidden="true"
+          >
+            A
+          </div>
+          <button class="edit-avatar-btn" aria-label="Edit profile picture">
+            <span class="material-icons" style="font-size: 20px"
+              >photo_camera</span
+            >
+          </button>
+        </div>
+        <h1 id="profileName">Andeng Mercado</h1>
+        <p id="memberSince">Member since December 2025</p>
+        <div class="profile-stats">
+          <div class="stat-item">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Downloads</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Favorites</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Uploads</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Information -->
+      <section class="profile-section" aria-labelledby="personal-info-heading">
+        <div class="section-header">
+          <h2 id="personal-info-heading">
+            <span class="material-icons" style="font-size: 24px">person</span>
+            Personal Information
+          </h2>
+          <button class="btn-edit" id="editPersonalInfo">
+            <span class="material-icons" style="font-size: 18px">edit</span>
+            <span>Edit</span>
+          </button>
+        </div>
+
+        <div class="info-view" id="personalInfoView">
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-icon">
+                <span class="material-icons">badge</span>
+              </div>
+              <div class="info-content">
+                <div class="info-label">Full Name</div>
+                <div class="info-value" id="displayName">Andeng Mercado</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <span class="material-icons">email</span>
+              </div>
+              <div class="info-content">
+                <div class="info-label">Email Address</div>
+                <div class="info-value" id="displayEmail">
+                  23-05956@g.batstate-u.edu.ph
+                </div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <span class="material-icons">work</span>
+              </div>
+              <div class="info-content">
+                <div class="info-label">Occupation</div>
+                <div class="info-value" id="displayOccupation">Student</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <span class="material-icons">location_on</span>
+              </div>
+              <div class="info-content">
+                <div class="info-label">Location</div>
+                <div class="info-value" id="displayLocation">
+                  Batangas, Philippines
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-edit hidden" id="personalInfoEdit">
+          <form id="personalInfoForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                value="Andrea Mercado"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                value="12-34567@g.baste-u.edu.ph"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="occupation">Occupation</label>
+              <input type="text" id="occupation" value="Student" />
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input
+                type="text"
+                id="location"
+                value="Pakil, Laguna, Philippines"
+              />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-save">Save Changes</button>
+              <button type="button" class="btn-cancel" id="cancelPersonalInfo">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- About Me -->
+      <section class="profile-section" aria-labelledby="about-heading">
+        <div class="section-header">
+          <h2 id="about-heading">
+            <span class="material-icons" style="font-size: 24px">info</span>
+            About Me
+          </h2>
+          <button class="btn-edit" id="editAbout">
+            <span class="material-icons" style="font-size: 18px">edit</span>
+            <span>Edit</span>
+          </button>
+        </div>
+
+        <div class="about-view" id="aboutView">
+          <p id="displayBio">
+            A passionate student exploring the world of design and
+            presentations. I love creating visually appealing slide decks that
+            effectively communicate ideas and stories. Always learning and
+            improving my design skills!
+          </p>
+        </div>
+
+        <div class="about-edit hidden" id="aboutEdit">
+          <form id="aboutForm">
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea id="bio">
+A passionate student exploring the world of design and presentations. I love creating visually appealing slide decks that effectively communicate ideas and stories. Always learning and improving my design skills!</textarea
+              >
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-save">Save Changes</button>
+              <button type="button" class="btn-cancel" id="cancelAbout">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Preferences -->
+      <section class="profile-section" aria-labelledby="preferences-heading">
+        <div class="section-header">
+          <h2 id="preferences-heading">
+            <span class="material-icons" style="font-size: 24px">settings</span>
+            Preferences
+          </h2>
+        </div>
+
+        <div class="preference-item">
+          <div class="preference-info">
+            <h3>Email Notifications</h3>
+            <p>Receive updates about new templates and features</p>
+          </div>
+          <label class="toggle-switch">
+            <input
+              type="checkbox"
+              checked
+              aria-label="Toggle email notifications"
+            />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="preference-item">
+          <div class="preference-info">
+            <h3>Newsletter</h3>
+            <p>Get weekly design tips and trends</p>
+          </div>
+          <label class="toggle-switch">
+            <input
+              type="checkbox"
+              checked
+              aria-label="Toggle newsletter subscription"
+            />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="preference-item">
+          <div class="preference-info">
+            <h3>Download Notifications</h3>
+            <p>Get notified when templates are downloaded</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" aria-label="Toggle download notifications" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Danger Zone -->
+      <section
+        class="profile-section danger-zone"
+        aria-labelledby="danger-heading"
+      >
+        <div class="section-header">
+          <h2 id="danger-heading">Danger Zone</h2>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 16px">
+          Once you delete your account, there is no going back. Please be
+          certain.
+        </p>
+        <button class="btn-danger" id="deleteAccount">Delete Account</button>
+      </section>
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav" role="navigation" aria-label="Mobile navigation">
+      <ul>
+        <li>
+          <a href="index.html" aria-label="Home">
+            <span class="material-icons">home</span>
+          </a>
+        </li>
+        <li>
+          <a href="search.html" aria-label="Search">
+            <span class="material-icons">search</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="upload-btn" aria-label="Upload">
+            <span class="material-icons">add</span>
+          </a>
+        </li>
+        <li>
+          <a href="favorites.html" aria-label="Favorites">
+            <span class="material-icons">favorite</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="profile.html"
+            class="active"
+            aria-label="Profile"
+            aria-current="page"
+          >
+            <span class="material-icons">person</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <script src="js/profile.js"></script>
+  </body>
+</html>

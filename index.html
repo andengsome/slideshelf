@@ -1,0 +1,540 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slideshelf - Discover Beautiful Presentation Templates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <!-- HEADER with Navigation -->
+    <header>
+      <div class="header-content">
+        <div
+          class="logo"
+          onclick="window.location.href='index.html'"
+          role="button"
+          tabindex="0"
+          aria-label="Slideshelf Home"
+        >
+          Slideshelf
+        </div>
+        <nav class="nav-desktop" role="navigation" aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html" class="active" aria-current="page">Home</a>
+            </li>
+            <li class="templates-nav-item">
+              <a
+                class="templates-nav-link"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Templates
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </a>
+
+              <!-- Templates Dropdown -->
+              <div class="templates-dropdown" role="menu">
+                <!-- By Style -->
+                <div class="dropdown-section">
+                  <div class="dropdown-section-title">
+                    <span class="material-icons">palette</span>
+                    <span>By Style</span>
+                  </div>
+                  <div class="dropdown-grid">
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Minimalist</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Simple</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Aesthetic</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Cute</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Professional</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Vintage</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span>Modern</span>
+                    </button>
+                    <a href="#" class="more-link">
+                      <span>View all styles</span>
+                      <span class="material-icons">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="dropdown-divider-line"></div>
+
+                <!-- By Color -->
+                <div class="dropdown-section">
+                  <div class="dropdown-section-title">
+                    <span class="material-icons">color_lens</span>
+                    <span>By Color</span>
+                  </div>
+                  <div class="dropdown-grid colors">
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #000; border-color: #000"
+                      ></span>
+                      <span>Black</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #fff"
+                      ></span>
+                      <span>White</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #ff61ca; border-color: #ff61ca"
+                      ></span>
+                      <span>Pink</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #bf63f1; border-color: #bf63f1"
+                      ></span>
+                      <span>Purple</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #22c55e; border-color: #22c55e"
+                      ></span>
+                      <span>Green</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #3b8ff6; border-color: #3b8ff6"
+                      ></span>
+                      <span>Blue</span>
+                    </button>
+                    <button class="dropdown-option" role="menuitem">
+                      <span
+                        class="color-dot"
+                        style="background-color: #fff30d; border-color: #fff30d"
+                      ></span>
+                      <span>Yellow</span>
+                    </button>
+                    <a href="search.html?category=color" class="more-link">
+                      <span>View all colors</span>
+                      <span class="material-icons">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Login Button (shown when NOT logged in) -->
+            <li id="loginButtonContainer" class="hidden">
+              <button
+                class="login-btn"
+                onclick="window.location.href='login.html'"
+              >
+                Login
+              </button>
+            </li>
+
+            <!-- Profile Dropdown (shown when logged in) -->
+            <li class="profile-dropdown hidden" id="profileDropdownContainer">
+              <div
+                class="profile-trigger"
+                id="profileTrigger"
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="User menu"
+              >
+                <div
+                  class="profile-avatar"
+                  aria-hidden="true"
+                  id="profileAvatarInitial"
+                >
+                  AM
+                </div>
+                <span class="material-icons" aria-hidden="true"
+                  >keyboard_arrow_down</span
+                >
+              </div>
+              <div
+                class="dropdown-menu"
+                id="dropdownMenu"
+                role="menu"
+                aria-label="User menu options"
+              >
+                <div class="dropdown-header">
+                  <div class="dropdown-user-info">
+                    <div
+                      class="dropdown-avatar"
+                      aria-hidden="true"
+                      id="dropdownAvatarInitial"
+                    >
+                      A
+                    </div>
+                    <div class="dropdown-user-details">
+                      <h4 id="userName">User Name</h4>
+                      <p id="userEmail">user@email.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-body">
+                  <a href="profile.html" class="dropdown-item" role="menuitem">
+                    View Profile
+                  </a>
+                  <a
+                    href="favorites.html"
+                    class="dropdown-item"
+                    role="menuitem"
+                  >
+                    My Favorites
+                  </a>
+                </div>
+                <div class="dropdown-divider" role="separator"></div>
+                <button
+                  class="dropdown-item logout"
+                  id="logoutBtn"
+                  role="menuitem"
+                >
+                  Logout
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" role="banner">
+      <div class="hero-content">
+        <h1>Welcome to Slideshelf!</h1>
+        <p>Find the perfect template for your next presentation</p>
+
+        <!-- Search Bar -->
+        <div class="hero-search-container">
+          <form class="hero-search-bar" role="search" onsubmit="return false;">
+            <span class="material-icons hero-search-icon" aria-hidden="true"
+              >search</span
+            >
+            <input
+              type="search"
+              id="mainSearchInput"
+              placeholder="Search a template"
+              aria-label="Search templates"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main role="main">
+      <!-- Categories Section -->
+      <section class="categories-section" aria-labelledby="categories-heading">
+        <div class="section-header">
+          <h2 id="categories-heading">Browse by Category</h2>
+          <a href="#" class="see-all">See all</a>
+        </div>
+        <div class="category-grid" role="list">
+          <div class="category-card" tabindex="0" role="listitem">
+            <div class="category-icon" aria-hidden="true">💼</div>
+            <h3>Business</h3>
+            <p>Professional templates</p>
+          </div>
+          <div class="category-card" tabindex="0" role="listitem">
+            <div class="category-icon" aria-hidden="true">🎨</div>
+            <h3>Creative</h3>
+            <p>Artistic designs</p>
+          </div>
+          <div class="category-card" tabindex="0" role="listitem">
+            <div class="category-icon" aria-hidden="true">🎓</div>
+            <h3>Education</h3>
+            <p>Academic presentations</p>
+          </div>
+          <div class="category-card" tabindex="0" role="listitem">
+            <div class="category-icon" aria-hidden="true">📊</div>
+            <h3>Marketing</h3>
+            <p>Campaign materials</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Templates Section -->
+      <section class="templates-section" aria-labelledby="templates-heading">
+        <div class="section-header">
+          <h2 id="templates-heading">Popular Templates</h2>
+          <a href="search.html" class="see-all">See all</a>
+        </div>
+        <div class="template-grid" role="list">
+          <!-- Template Card 1 -->
+          <article class="template-card" tabindex="0" role="listitem">
+            <div class="template-image">
+              <img
+                src="assets/templates/preview/algo.png"
+                alt="Data Algorithm PPT Template Preview"
+                loading="lazy"
+              />
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="template-info">
+              <div class="template-meta">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span>4.9 (28)</span>
+                </div>
+                <span class="author">by Sophia Mercado</span>
+              </div>
+              <h3 class="template-title">Data Algorithm PPT</h3>
+              <div class="template-tags">
+                <span class="tag">Technology</span>
+                <span class="tag">School</span>
+                <span class="tag">Algorithm</span>
+                <span class="tag">Report</span>
+              </div>
+              <div class="template-actions">
+                <button class="btn-primary">Download</button>
+                <button class="btn-secondary">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Template Card 2 -->
+          <article class="template-card" tabindex="0" role="listitem">
+            <div class="template-image">
+              <img
+                src="assets/templates/preview/hamster.png"
+                alt="Cute Hamster Personal Organizer Template Preview"
+                loading="lazy"
+              />
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="template-info">
+              <div class="template-meta">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span>4.9 (21)</span>
+                </div>
+                <span class="author">by PlannerKim</span>
+              </div>
+              <h3 class="template-title">Cute Hamster Personal Organizer</h3>
+              <div class="template-tags">
+                <span class="tag">Interactive</span>
+                <span class="tag">Game</span>
+                <span class="tag">Planner</span>
+                <span class="tag">Animal</span>
+              </div>
+              <div class="template-actions">
+                <button class="btn-primary">Download</button>
+                <button class="btn-secondary">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Template Card 3 -->
+          <article class="template-card" tabindex="0" role="listitem">
+            <div class="template-image">
+              <img
+                src="assets/templates/preview/climate.png"
+                alt="Dark Green Climate Change PPT Preview"
+                loading="lazy"
+              />
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="template-info">
+              <div class="template-meta">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span>4.9 (27)</span>
+                </div>
+                <span class="author">by Vostre Huartz</span>
+              </div>
+              <h3 class="template-title">Dark Green Climate Change PPT</h3>
+              <div class="template-tags">
+                <span class="tag">Green</span>
+                <span class="tag">Presentation</span>
+                <span class="tag">Climate</span>
+                <span class="tag">Earth</span>
+              </div>
+              <div class="template-actions">
+                <button class="btn-primary">Download</button>
+                <button class="btn-secondary">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Template Card 4 -->
+          <article class="template-card" tabindex="0" role="listitem">
+            <div class="template-image">
+              <img
+                src="assets/templates/preview/crowns.png"
+                alt="Vintage Game of Crowns Minitheme Template Preview"
+                loading="lazy"
+              />
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="template-info">
+              <div class="template-meta">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span>4.8 (16)</span>
+                </div>
+                <span class="author">by PlayLearn</span>
+              </div>
+              <h3 class="template-title">Vintage Game of Crowns Minitheme</h3>
+              <div class="template-tags">
+                <span class="tag">Game</span>
+                <span class="tag">Medieval</span>
+                <span class="tag">Vintage</span>
+                <span class="tag">Brown</span>
+              </div>
+              <div class="template-actions">
+                <button class="btn-primary">Download</button>
+                <button class="btn-secondary">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Template Card 5 -->
+          <article class="template-card" tabindex="0" role="listitem">
+            <div class="template-image">
+              <img
+                src="assets/templates/preview/parking.png"
+                alt="Smark Parking System with Arduino Template Preview"
+                loading="lazy"
+              />
+              <button class="favorite-btn" aria-label="Add to favorites">
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="template-info">
+              <div class="template-meta">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span>4.8 (29)</span>
+                </div>
+                <span class="author">by Eiya Riz</span>
+              </div>
+              <h3 class="template-title">Smark Parking System with Arduino</h3>
+              <div class="template-tags">
+                <span class="tag">Defense</span>
+                <span class="tag">Innovation</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">Cars</span>
+              </div>
+              <div class="template-actions">
+                <button class="btn-primary">Download</button>
+                <button class="btn-secondary">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Template Card 6 -->
+          <article class="template-card" tabindex="0" role="listitem">
+            <div class="template-image">
+              <img
+                src="assets/templates/preview/mtwi.png"
+                alt="Minute to Win It Games Template Preview"
+                loading="lazy"
+              />
+              <button
+                class="favorite-btn"
+                aria-label="Add Game Developer Portfolio to favorites"
+              >
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="template-info">
+              <div class="template-meta">
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span>4.6 (14)</span>
+                </div>
+                <span class="author">by FunSlides</span>
+              </div>
+              <h3 class="template-title">Minute to Win It Games</h3>
+              <div class="template-tags">
+                <span class="tag">Game</span>
+                <span class="tag">Yellow</span>
+                <span class="tag">Fun</span>
+                <span class="tag">Creative</span>
+              </div>
+              <div class="template-actions">
+                <button class="btn-primary">Download</button>
+                <button class="btn-secondary">Preview</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- BOTTOM NAVIGATION (Mobile Only) -->
+    <nav class="bottom-nav" role="navigation" aria-label="Mobile navigation">
+      <ul>
+        <li>
+          <a
+            href="index.html"
+            class="active"
+            aria-label="Home"
+            aria-current="page"
+            >🏠</a
+          >
+        </li>
+        <li><a href="#" aria-label="Search">🔍</a></li>
+        <li><a href="#" class="upload-btn" aria-label="Upload">+</a></li>
+        <li><a href="#" aria-label="Templates">📄</a></li>
+        <li><a href="#" aria-label="Profile">👤</a></li>
+      </ul>
+    </nav>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
